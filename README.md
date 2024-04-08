@@ -6,7 +6,7 @@ CVPR 2021
 
 [[arXiv]](https://arxiv.org/abs/2103.07941) [[Paper PDF]](https://arxiv.org/pdf/2103.07941.pdf) [[Project Page]](https://hkchengrex.github.io/MiVOS/) [[Demo]](https://hkchengrex.github.io/MiVOS/video.html#partb) [[Papers with Code]](https://paperswithcode.com/task/interactive-video-object-segmentation) [[Supplementary Material]](docs/supplementary.pdf)
 
-## Newer: check out our new work on long-term VOS [XMem](https://github.com/hkchengrex/XMem). It also includes an interactive GUI!
+## Newer: check out our new work [Cutie](https://github.com/hkchengrex/Cutie). It also includes an interactive GUI!
 
 ## New: see the [STCN branch](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) for a better and faster version.
 
@@ -57,7 +57,7 @@ Refer to the official [PyTorch guide]((<https://pytorch.org/>)) for installing P
 ### GUI
 
 1. `python download_model.py` to get all the required models.
-2. `python interactive_gui.py --video <path to video>` or `python interactive_gui.py --images <path to a folder of images>`. A video has been prepared for you at `examples/example.mp4`.
+2. `python interactive_gui.py --video <path to video>` or `python interactive_gui.py --images <path to a folder of images>`. A video has been prepared for you at `example/example.mp4`.
 3. If you need to label more than one object, additionally specify `--num_objects <number_of_objects>`. See all the argument options with `python interactive_gui.py --help`.
 4. There are instructions in the GUI. You can also watch the [demo videos](https://hkchengrex.github.io/MiVOS/video.html#partb) for some ideas.
 
@@ -101,7 +101,7 @@ Precomputed result, with the json summary: [[Google Drive]](https://drive.google
 
 ### Data preparation
 
-Datasets should be arranged as the following layout. You can use `download_datasets.py` (same as the one Mask-Propagation) to get the DAVIS dataset and manually download and extract fusion_data ([[OneDrive]](https://hkustconnect-my.sharepoint.com/:u:/g/personal/hkchengad_connect_ust_hk/ESGj7FihDUpNjpygP8u1NGkBc-9YFSMFCDDpxKA87aTJ4w?e=SPXheO)) and [BL30K](#bl30k).
+Datasets should be arranged as the following layout. You can use `download_datasets.py` (same as the one Mask-Propagation) to get the DAVIS dataset and manually download and extract fusion_data ([[OneDrive]](https://uillinoisedu-my.sharepoint.com/:u:/g/personal/hokeikc2_illinois_edu/EXNrnDbvZfxKqDDbfkEqJh8BTTfXFHnQlZ73oBsetRwOJg?e=RwbMMA)) and [BL30K](#bl30k).
 
 ```bash
 ├── BL30K
@@ -130,7 +130,9 @@ You can either use the automatic script `download_bl30k.py` or download it manua
 
 Google Drive is much faster in my experience. Your mileage might vary.
 
-Manual download: [[Google Drive]](https://drive.google.com/drive/folders/1KxriFZM8Y_-KbiA3D0PaMv6LQaatKFH-?usp=sharing) [[OneDrive]](https://uillinoisedu-my.sharepoint.com/:f:/g/personal/hokeikc2_illinois_edu/ElEqJXQqaqZAqG8QROa0VesBAw4FiOl5wleP2iq_KXDPyw?e=eKMSbx)
+Manual download: [[Google Drive]](https://drive.google.com/drive/folders/1KxriFZM8Y_-KbiA3D0PaMv6LQaatKFH-?usp=sharing) [[OneDrive]](https://uillinoisedu-my.sharepoint.com/:f:/g/personal/hokeikc2_illinois_edu/ElEqJXQqaqZAqG8QROa0VesBAw4FiOl5wleP2iq_KXDPyw?e=HLsvfY)
+
+**Note: Google might block the Google Drive link. You can 1) make a shortcut of the folder to your own Google Drive, and 2) use `rclone` to copy from your own Google Drive (would not count towards your storage limit).**
 
 [UST Mirror] (Reliability not guaranteed, speed throttled, do not use if others are available): <ckcpu1.cse.ust.hk:8080/MiVOS/BL30K_{a-f}.tar> (Replace {a-f} with the part that you need).
 
@@ -158,7 +160,7 @@ bf73914d2888ad642bc01be60523caf6  BL30K_f.tar
 
 We use the propagation module to run through some data and obtain real outputs to train the fusion module. See the script `generate_fusion.py`.
 
-Or you can download pre-generated fusion data: [[Google Drive]](https://drive.google.com/file/d/1NF1APCxb9jzyDaEApHMN24aFPsqnYH6G/view?usp=sharing) [[OneDrive]](https://uillinoisedu-my.sharepoint.com/:u:/g/personal/hokeikc2_illinois_edu/EXNrnDbvZfxKqDDbfkEqJh8BTTfXFHnQlZ73oBsetRwOJg?e=RP1WjE)
+Or you can download pre-generated fusion data: [[Google Drive]](https://drive.google.com/file/d/1NF1APCxb9jzyDaEApHMN24aFPsqnYH6G/view?usp=sharing) [[OneDrive]](https://uillinoisedu-my.sharepoint.com/:u:/g/personal/hokeikc2_illinois_edu/EXNrnDbvZfxKqDDbfkEqJh8BTTfXFHnQlZ73oBsetRwOJg?e=RwbMMA)
 
 ### Training commands
 
